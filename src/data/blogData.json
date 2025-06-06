@@ -1,12 +1,12 @@
 
 {
   "personalInfo": {
-    "name": "张三",
-    "title": "金融科技 & 产品设计",
+    "name": "宋知恒",
+    "title": "产品经理 & 数据分析 & 大模型算法",
     "avatar": "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=200&h=200&fit=crop&crop=face",
     "education": {
-      "school": "清华大学",
-      "major": "金融学"
+      "school": "武汉大学",
+      "major": "信息管理与信息系统"
     },
     "skills": {
       "technical": ["Python", "JavaScript", "React", "Figma", "SPSS"],
