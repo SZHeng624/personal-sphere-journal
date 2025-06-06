@@ -1,5 +1,5 @@
 
-import { Tool, Globe, BookOpen, ExternalLink } from 'lucide-react';
+import { Wrench, Globe, BookOpen, ExternalLink } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface ResourcesProps {
@@ -24,7 +24,7 @@ const Resources = ({ resources }: ResourcesProps) => {
           <Card className="hover-lift">
             <CardHeader>
               <CardTitle className="flex items-center">
-                <Tool className="mr-2 text-primary" size={24} />
+                <Wrench className="mr-2 text-primary" size={24} />
                 实用工具
               </CardTitle>
             </CardHeader>
