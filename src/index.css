@@ -3,75 +3,77 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Personal Blog Theme - Tech Blue */
+/* Personal Blog Theme - Dark Tech */
 
 @layer base {
   :root {
-    --background: 249 250 251;
-    --foreground: 17 24 39;
+    --background: 13 13 15;
+    --foreground: 248 250 252;
 
-    --card: 255 255 255;
-    --card-foreground: 17 24 39;
+    --card: 17 17 20;
+    --card-foreground: 248 250 252;
 
-    --popover: 255 255 255;
-    --popover-foreground: 17 24 39;
+    --popover: 17 17 20;
+    --popover-foreground: 248 250 252;
 
-    --primary: 59 130 246;
-    --primary-foreground: 248 250 252;
+    --primary: 56 189 248;
+    --primary-foreground: 13 13 15;
 
-    --secondary: 226 232 240;
-    --secondary-foreground: 51 65 85;
+    --secondary: 30 30 35;
+    --secondary-foreground: 203 213 225;
 
-    --muted: 241 245 249;
-    --muted-foreground: 100 116 139;
+    --muted: 25 25 30;
+    --muted-foreground: 148 163 184;
 
-    --accent: 147 197 253;
-    --accent-foreground: 30 58 138;
+    --accent: 34 211 238;
+    --accent-foreground: 13 13 15;
 
     --destructive: 239 68 68;
     --destructive-foreground: 248 250 252;
 
-    --border: 226 232 240;
-    --input: 226 232 240;
-    --ring: 59 130 246;
+    --border: 38 38 42;
+    --input: 38 38 42;
+    --ring: 56 189 248;
 
     --radius: 0.5rem;
 
-    --tech-blue: 59 130 246;
-    --tech-blue-light: 147 197 253;
-    --tech-blue-dark: 30 58 138;
-    --gray-light: 248 250 252;
-    --gray-medium: 148 163 184;
+    --tech-blue: 56 189 248;
+    --tech-blue-light: 34 211 238;
+    --tech-blue-dark: 2 132 199;
+    --tech-cyan: 6 182 212;
+    --tech-purple: 139 92 246;
+    --gray-dark: 13 13 15;
+    --gray-medium: 38 38 42;
   }
 
   .dark {
-    --background: 15 23 42;
-    --foreground: 248 250 252;
+    --background: 8 8 10;
+    --foreground: 250 250 250;
 
-    --card: 30 41 59;
-    --card-foreground: 248 250 252;
+    --card: 12 12 15;
+    --card-foreground: 250 250 250;
 
-    --popover: 30 41 59;
-    --popover-foreground: 248 250 252;
+    --popover: 12 12 15;
+    --popover-foreground: 250 250 250;
 
-    --primary: 147 197 253;
-    --primary-foreground: 15 23 42;
+    --primary: 34 211 238;
+    --primary-foreground: 8 8 10;
 
-    --secondary: 51 65 85;
+    --secondary: 22 22 27;
     --secondary-foreground: 226 232 240;
 
-    --muted: 51 65 85;
-    --muted-foreground: 148 163 184;
+    --muted: 20 20 25;
+    --muted-foreground: 156 163 175;
 
-    --accent: 59 130 246;
-    --accent-foreground: 226 232 240;
+    --accent: 56 189 248;
+    --accent-foreground: 8 8 10;
 
     --destructive: 220 38 38;
     --destructive-foreground: 248 250 252;
 
-    --border: 51 65 85;
-    --input: 51 65 85;
-    --ring: 147 197 253;
+    --border: 30 30 35;
+    --input: 30 30 35;
+    --ring: 34 211 238;
   }
 }
 
@@ -82,6 +84,7 @@
 
   body {
     @apply bg-background text-foreground font-sans;
+    background: linear-gradient(135deg, rgb(13, 13, 15) 0%, rgb(17, 17, 20) 100%);
   }
 }
 
@@ -104,7 +107,19 @@
   
   .hover-lift:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(56, 189, 248, 0.1), 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .tech-glow {
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+  }
+
+  .tech-border {
+    border: 1px solid rgba(56, 189, 248, 0.3);
+  }
+
+  .tech-gradient {
+    background: linear-gradient(135deg, rgb(56, 189, 248) 0%, rgb(34, 211, 238) 100%);
   }
 }
 
