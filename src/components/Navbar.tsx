@@ -1,4 +1,6 @@
+
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 
 interface NavbarProps {
@@ -8,14 +10,15 @@ interface NavbarProps {
 
 const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navItems = [
-    { name: '首页', href: '#home' },
-    { name: '项目', href: '#projects' },
-    { name: '学习', href: '#learning' },
-    { name: '兴趣', href: '#interests' },
-    { name: '资源', href: '#resources' },
-    { name: '文章', href: '#articles' },
+    { name: '首页', href: '/' },
+    { name: '项目', href: '/projects' },
+    { name: '学习', href: '/learning' },
+    { name: '兴趣', href: '/interests' },
+    { name: '资源', href: '/resources' },
+    { name: '文章', href: '/articles' },
   ];
 
   return (
@@ -24,21 +27,27 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <span className="text-xl font-bold gradient-text">Personal Sphere</span>
+            <Link to="/" className="text-xl font-bold gradient-text">
+              Personal Sphere
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-1">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
-                  className="text-foreground/80 hover:text-primary px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-primary/10 relative group"
+                  to={item.href}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-primary/10 relative group ${
+                    location.pathname === item.href
+                      ? 'text-primary bg-primary/10'
+                      : 'text-foreground/80 hover:text-primary'
+                  }`}
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-3/4 group-hover:left-1/8"></span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -72,14 +81,18 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
           <div className="md:hidden animate-fade-in">
             <div className="px-2 pt-2 pb-3 space-y-1 glass-effect rounded-lg mt-2 border border-border/50">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
-                  className="text-foreground/80 hover:text-primary block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 hover:bg-primary/10"
+                  to={item.href}
+                  className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 hover:bg-primary/10 ${
+                    location.pathname === item.href
+                      ? 'text-primary bg-primary/10'
+                      : 'text-foreground/80 hover:text-primary'
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
