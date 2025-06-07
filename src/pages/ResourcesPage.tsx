@@ -1,7 +1,7 @@
 
 import Navbar from '@/components/Navbar';
 import Resources from '@/components/Resources';
-import blogData from '@/data/blogData.json';
+import { resources } from '@/content';
 
 interface ResourcesPageProps {
   darkMode: boolean;
@@ -13,7 +13,7 @@ const ResourcesPage = ({ darkMode, toggleDarkMode }: ResourcesPageProps) => {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <main className="pt-16">
-        <Resources resources={blogData.resources} />
+        <Resources resources={resources} />
       </main>
     </div>
   );

@@ -1,7 +1,7 @@
 
 import Navbar from '@/components/Navbar';
 import PersonalInfo from '@/components/PersonalInfo';
-import blogData from '@/data/blogData.json';
+import { personalInfo } from '@/content';
 
 interface HomeProps {
   darkMode: boolean;
@@ -13,7 +13,7 @@ const Home = ({ darkMode, toggleDarkMode }: HomeProps) => {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <main className="pt-16">
-        <PersonalInfo data={blogData.personalInfo} />
+        <PersonalInfo data={personalInfo} />
       </main>
     </div>
   );

@@ -1,7 +1,7 @@
 
 import Navbar from '@/components/Navbar';
 import LearningLog from '@/components/LearningLog';
-import blogData from '@/data/blogData.json';
+import { learningLogs } from '@/content';
 
 interface LearningPageProps {
   darkMode: boolean;
@@ -13,7 +13,7 @@ const LearningPage = ({ darkMode, toggleDarkMode }: LearningPageProps) => {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <main className="pt-16">
-        <LearningLog logs={blogData.learningLogs} />
+        <LearningLog logs={learningLogs} />
       </main>
     </div>
   );

@@ -1,7 +1,7 @@
 
 import Navbar from '@/components/Navbar';
 import Interests from '@/components/Interests';
-import blogData from '@/data/blogData.json';
+import { interests } from '@/content';
 
 interface InterestsPageProps {
   darkMode: boolean;
@@ -13,7 +13,7 @@ const InterestsPage = ({ darkMode, toggleDarkMode }: InterestsPageProps) => {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <main className="pt-16">
-        <Interests interests={blogData.interests} />
+        <Interests interests={interests} />
       </main>
     </div>
   );

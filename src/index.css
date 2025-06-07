@@ -3,69 +3,96 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Personal Blog Theme - Clean Color Scheme */
+/* Personal Blog Theme - 温暖自然风格 */
 
 @layer base {
   :root {
-    --background: 255 255 255;
-    --foreground: 15 23 42;
+    /* 亮色模式 - 温暖自然风格 */
+    --background: 45 33% 97%;
+    /* 暖白 (类似羊皮纸) */
+    --foreground: 24 22% 20%;
+    /* 深棕灰 (文字主色) */
 
-    --card: 255 255 255;
-    --card-foreground: 15 23 42;
+    --card: 0 0% 100%;
+    /* 纯白卡片 */
+    --card-foreground: 24 22% 20%;
 
-    --popover: 255 255 255;
-    --popover-foreground: 15 23 42;
+    --primary: 202 80% 52%;
+    /* 活力蓝 (按钮/重点) */
+    --primary-foreground: 0 0% 100%;
 
-    --primary: 59 130 246;
-    --primary-foreground: 255 255 255;
+    --secondary: 180 30% 92%;
+    /* 淡薄荷绿 (辅助色) */
+    --secondary-foreground: 195 50% 30%;
 
-    --secondary: 248 250 252;
-    --secondary-foreground: 51 65 85;
+    --accent: 351 75% 58%;
+    /* 珊瑚粉 (点缀色) */
+    --accent-foreground: 0 0% 100%;
 
-    --muted: 248 250 252;
-    --muted-foreground: 100 116 139;
+    --muted: 45 20% 91%;
+    /* 浅米灰 (次要文本) */
+    --muted-foreground: 24 10% 45%;
 
-    --accent: 219 234 254;
-    --accent-foreground: 30 58 138;
+    --border: 30 20% 85%;
+    /* 浅木色边框 */
+    --input: 30 20% 90%;
+    --ring: 202 80% 52%;
+    /* 聚焦环与主色一致 */
 
-    --destructive: 239 68 68;
-    --destructive-foreground: 255 255 255;
+    --destructive: 5 80% 55%;
+    /* 番茄红 (错误提示) */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 226 232 240;
-    --input: 226 232 240;
-    --ring: 59 130 246;
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 22% 20%;
 
     --radius: 0.75rem;
   }
 
   .dark {
-    --background: 15 23 42;
-    --foreground: 248 250 252;
+    /* 背景：深灰蓝（比纯黑柔和）*/
+    --background: 230 15% 20%;
+    /* 类似深夜天空的蓝灰色 */
+    --foreground: 220 15% 85%;
+    /* 米白色文字（非纯白）*/
 
-    --card: 30 41 59;
-    --card-foreground: 248 250 252;
+    /* 卡片：带微妙的紫色调 */
+    --card: 230 15% 25%;
+    /* 比背景稍亮 */
+    --card-foreground: 220 15% 90%;
 
-    --popover: 30 41 59;
-    --popover-foreground: 248 250 252;
+    /* 主色：低饱和蓝（减少视觉疲劳）*/
+    --primary: 210 60% 60%;
+    /* 湖水蓝 */
+    --primary-foreground: 230 15% 20%;
 
-    --primary: 96 165 250;
-    --primary-foreground: 15 23 42;
+    /* 辅助色：暖灰色 */
+    --secondary: 230 10% 30%;
+    /* 类似阴影的灰紫色 */
+    --secondary-foreground: 220 15% 85%;
 
-    --secondary: 51 65 85;
-    --secondary-foreground: 203 213 225;
+    /* 点缀色：柔和的珊瑚色 */
+    --accent: 15 70% 65%;
+    /* 暗灯光般的暖橙色 */
+    --accent-foreground: 0 0% 100%;
 
-    --muted: 51 65 85;
-    --muted-foreground: 148 163 184;
+    /* 次要文本：中灰色 */
+    --muted: 230 10% 50%;
+    --muted-foreground: 220 15% 70%;
 
-    --accent: 30 58 138;
-    --accent-foreground: 219 234 254;
+    /* 边框：与背景融合 */
+    --border: 230 15% 35%;
+    /* 不易察觉的分隔线 */
+    --input: 230 15% 30%;
+    --ring: 210 60% 60%;
+    /* 聚焦时轻微提示 */
 
-    --destructive: 220 38 38;
-    --destructive-foreground: 248 250 252;
+    /* 错误色：暗红色 */
+    --destructive: 5 60% 50%;
+    --destructive-foreground: 220 15% 90%;
 
-    --border: 51 65 85;
-    --input: 51 65 85;
-    --ring: 96 165 250;
+    --popover: 230 15% 25%;
+    --popover-foreground: 220 15% 90%;
   }
 }
 
@@ -80,11 +107,11 @@
   }
 
   body.dark {
-    background: linear-gradient(135deg, rgb(15, 23, 42) 0%, rgb(30, 41, 59) 50%, rgb(51, 65, 85) 100%);
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(230 15% 18%) 50%, hsl(230 15% 22%) 100%);
   }
 
   body:not(.dark) {
-    background: rgb(255, 255, 255);
+    background: hsl(var(--background));
   }
 
   html {
